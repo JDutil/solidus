@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-group :backend, :frontend, :core, :api do
+group :backend, :core, :api do
   gemspec require: false
 
   rails_version = ENV['RAILS_VERSION'] || '~> 5.2.0'
@@ -40,19 +40,12 @@ group :backend, :frontend, :core, :api do
   gem 'puma', require: false
 end
 
-group :backend, :frontend do
-  gem 'capybara', '~> 3.13', require: false
-  gem 'capybara-screenshot', '>= 1.0.18', require: false
-  gem 'selenium-webdriver', require: false
-end
-
-group :frontend do
-  gem 'generator_spec'
-end
-
 group :backend do
   gem 'teaspoon', require: false
   gem 'teaspoon-mocha', require: false
+  gem 'capybara', '~> 3.13', require: false
+  gem 'capybara-screenshot', '>= 1.0.18', require: false
+  gem 'selenium-webdriver', require: false
 end
 
 group :utils do
