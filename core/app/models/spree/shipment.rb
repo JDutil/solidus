@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'acts_as_commentable'
+
 module Spree
   # An order's planned shipments including tracking and cost.
   #
@@ -38,6 +40,9 @@ module Spree
     }
 
     scope :by_store, ->(store) { joins(:order).merge(Spree::Order.by_store(store)) }
+
+    # from solidus_comments gem
+    acts_as_commentable
 
     # shipment state machine (see http://github.com/pluginaweek/state_machine/tree/master for details)
     state_machine initial: :pending, use_transactions: false do

@@ -119,6 +119,12 @@ module Spree
         end
       end
 
+      # from solidus_comments gem
+      def comments
+        shipment
+        @comment_types = Spree::CommentType.where(applies_to: "Shipment")
+      end
+
       private
 
       def load_transfer_params

@@ -151,6 +151,12 @@ module Spree
         respond_with(@order) { |format| format.html { redirect_to(spree.admin_order_adjustments_path(@order)) } }
       end
 
+      # from solidus_comments gem
+      def comments
+        load_order
+        @comment_types = Spree::CommentType.where(applies_to: "Order")
+      end
+
       private
 
       def order_params

@@ -43,7 +43,8 @@ end
 group :backend, :frontend do
   gem 'capybara', '~> 3.13', require: false
   gem 'capybara-screenshot', '>= 1.0.18', require: false
-  gem 'selenium-webdriver', require: false
+  gem 'selenium-webdriver', '3.142.4', require: false
+	gem 'webdrivers'
 end
 
 group :frontend do

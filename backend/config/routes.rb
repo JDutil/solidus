@@ -185,6 +185,23 @@ Spree::Core::Engine.routes.draw do
     end
 
     resources :style_guide, only: [:index]
+
+    # from solidus_comments gem
+    resources :comments
+    resources :comment_types
+
+    resources :orders do
+      member do
+        get :comments
+      end
+
+      resources :shipments do
+        member do
+          get :comments
+        end
+      end
+    end
+    # end from solidus_comments
   end
 
   get '/admin', to: 'admin/root#index', as: :admin
