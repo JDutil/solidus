@@ -291,3 +291,5 @@ class Spree::Admin::ResourceController < Spree::Admin::BaseController
     render action: 'edit'
   end
 end
+
+ActiveSupport.run_load_hooks('Spree::Admin::ResourceController', Spree::Admin::ResourceController)

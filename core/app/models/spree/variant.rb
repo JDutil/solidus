@@ -465,3 +465,5 @@ module Spree
 end
 
 require_dependency 'spree/variant/scopes'
+
+ActiveSupport.run_load_hooks('Spree::Variant', Spree::Variant)

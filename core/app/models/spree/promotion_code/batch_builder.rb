@@ -76,3 +76,5 @@ class ::Spree::PromotionCode::BatchBuilder
     code_set - Spree::PromotionCode.where(value: code_set.to_a).pluck(:value)
   end
 end
+
+ActiveSupport.run_load_hooks('Spree::PromotionCode::BatchBuilder', Spree::PromotionCode::BatchBuilder)

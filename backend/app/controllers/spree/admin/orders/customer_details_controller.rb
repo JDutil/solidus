@@ -79,3 +79,5 @@ module Spree
     end
   end
 end
+
+ActiveSupport.run_load_hooks('Spree::Admin::Orders::CustomerDetailsController', Spree::Admin::Orders::CustomerDetailsController)

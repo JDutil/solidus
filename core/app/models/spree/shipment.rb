@@ -437,3 +437,5 @@ module Spree
     end
   end
 end
+
+ActiveSupport.run_load_hooks('Spree::Shipment', Spree::Shipment)

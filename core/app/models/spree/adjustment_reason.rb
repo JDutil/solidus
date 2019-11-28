@@ -10,3 +10,5 @@ module Spree
     scope :active, -> { where(active: true) }
   end
 end
+
+ActiveSupport.run_load_hooks('Spree::AdjustmentReason', Spree::AdjustmentReason)

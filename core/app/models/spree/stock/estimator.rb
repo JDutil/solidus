@@ -69,3 +69,5 @@ module Spree
     end
   end
 end
+
+ActiveSupport.run_load_hooks('Spree::Stock::Estimator', Spree::Stock::Estimator)

@@ -42,3 +42,5 @@ class Spree::PromotionCode < Spree::Base
     self.value = value.downcase.strip
   end
 end
+
+ActiveSupport.run_load_hooks('Spree::PromotionCode', Spree::PromotionCode)

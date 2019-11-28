@@ -23,3 +23,5 @@ module Spree
     end
   end
 end
+
+ActiveSupport.run_load_hooks('Spree::Admin::StoresController', Spree::Admin::StoresController)

@@ -51,3 +51,5 @@ module Spree
     end
   end
 end
+
+ActiveSupport.run_load_hooks('Spree::Promotion::Rules::ItemTotal', Spree::Promotion::Rules::ItemTotal)

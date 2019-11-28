@@ -13,3 +13,5 @@ class Spree::ReimbursementType::OriginalPayment < Spree::ReimbursementType
     end
   end
 end
+
+ActiveSupport.run_load_hooks('Spree::ReimbursementType::OriginalPayment', Spree::ReimbursementType::OriginalPayment)
