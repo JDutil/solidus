@@ -154,7 +154,7 @@ module Spree
       # from solidus_comments gem
       def comments
         load_order
-        @comment_types = Spree::CommentType.where(applies_to: "Order")
+        @comment_types = Spree::CommentType.where(applies_to: 'Order')
       end
 
       private
