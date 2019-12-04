@@ -1,4 +1,4 @@
-# frozen_string_literat: true
+# frozen_string_literal: true
 
 class Spree::Admin::CommentTypesController < Spree::Admin::ResourceController
 end
