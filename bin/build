@@ -31,13 +31,6 @@ echo "************************"
 cd ../core
 bundle exec rspec spec
 
-# Solidus Frontend
-echo "****************************"
-echo "* Testing Solidus Frontend *"
-echo "****************************"
-cd ../frontend
-bundle exec rspec spec
-
 # Solidus Sample
 echo "**************************"
 echo "* Testing Solidus Sample *"
