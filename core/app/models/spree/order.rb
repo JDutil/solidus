@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'acts_as_commentable'
+
 module Spree
   # The customers cart until completed, then acts as permanent record of the transaction.
   #
@@ -104,6 +106,9 @@ module Spree
     belongs_to :created_by, class_name: Spree::UserClassHandle.new
     belongs_to :approver, class_name: Spree::UserClassHandle.new
     belongs_to :canceler, class_name: Spree::UserClassHandle.new
+
+    # from solidus_comments gem
+    acts_as_commentable
 
     accepts_nested_attributes_for :line_items
     accepts_nested_attributes_for :bill_address

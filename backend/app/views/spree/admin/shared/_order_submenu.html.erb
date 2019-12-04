@@ -59,5 +59,13 @@
         <%= link_to t('spree.cancel_inventory'), spree.admin_order_cancellations_path(@order) %>
       <% end %>
     <% end %>
+
+    <li <%== ' class="active"' if (defined? current and current == 'Comments') %>>
+      <% if @order.comments.any? %>
+        <%= link_to_with_icon 'comment-o', I18n.t('spree.comments_count', count: @order.comments.count), comments_admin_order_url(@order) %>
+      <% else %>
+        <%= link_to_with_icon 'comment-o', I18n.t('spree.comments'), comments_admin_order_url(@order) %>
+      <% end %>
+    </li>
   </ul>
 </nav>
