@@ -25,3 +25,5 @@ module Spree
     end
   end
 end
+
+ActiveSupport.run_load_hooks('Spree::Core::ControllerHelpers::Pricing', Spree::Core::ControllerHelpers::Pricing)

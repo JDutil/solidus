@@ -105,3 +105,5 @@ module Spree
     end
   end
 end
+
+ActiveSupport.run_load_hooks('Spree::Core::ControllerHelpers::Order', Spree::Core::ControllerHelpers::Order)

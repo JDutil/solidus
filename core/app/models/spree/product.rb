@@ -398,3 +398,5 @@ module Spree
 end
 
 require_dependency 'spree/product/scopes'
+
+ActiveSupport.run_load_hooks('Spree::Product', Spree::Product)

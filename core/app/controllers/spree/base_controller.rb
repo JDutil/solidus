@@ -13,3 +13,5 @@ class Spree::BaseController < ApplicationController
 
   respond_to :html
 end
+
+ActiveSupport.run_load_hooks('Spree::BaseController', Spree::BaseController)

@@ -58,3 +58,5 @@ class Spree::Admin::PromotionRulesController < Spree::Admin::BaseController
     params[:promotion_rule].permit!
   end
 end
+
+ActiveSupport.run_load_hooks('Spree::Admin::PromotionRulesController', Spree::Admin::PromotionRulesController)

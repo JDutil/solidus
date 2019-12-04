@@ -36,3 +36,5 @@ module Spree
     end
   end
 end
+
+ActiveSupport.run_load_hooks('Spree::Promotion::Rules::FirstOrder', Spree::Promotion::Rules::FirstOrder)

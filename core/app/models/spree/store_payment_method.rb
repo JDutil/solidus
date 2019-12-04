@@ -6,3 +6,5 @@ module Spree
     belongs_to :payment_method, inverse_of: :store_payment_methods
   end
 end
+
+ActiveSupport.run_load_hooks('Spree::StorePaymentMethod', Spree::StorePaymentMethod)
