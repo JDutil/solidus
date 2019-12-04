@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'webdrivers/chromedriver'
-
 if ENV["COVERAGE"]
   require 'simplecov'
   SimpleCov.start('rails')
