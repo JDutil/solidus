@@ -49,3 +49,5 @@ class Spree::Admin::PromotionActionsController < Spree::Admin::BaseController
     end
   end
 end
+
+ActiveSupport.run_load_hooks('Spree::Admin::PromotionActionsController', Spree::Admin::PromotionActionsController)
