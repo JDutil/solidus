@@ -73,6 +73,7 @@ module Spree
 
           Spree::Tax::ItemTax.new(
             item_id: item.id,
+            item: item,
             label: rate.adjustment_label(amount),
             tax_rate: rate,
             amount: amount,
