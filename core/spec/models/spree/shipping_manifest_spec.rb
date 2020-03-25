@@ -6,7 +6,7 @@ module Spree
   RSpec.describe ShippingManifest, type: :model do
     let!(:store) { create :store }
     let(:order) { Order.create! }
-    let(:variant) { create :variant }
+    let!(:variant) { create :variant }
     let!(:shipment) { create(:shipment, state: 'pending', order: order) }
     subject(:manifest) { described_class.new(inventory_units: inventory_units) }
 
@@ -60,6 +60,31 @@ module Spree
           )
           expect(manifest.items[1]).to have_attributes(
             variant: variant2,
+            quantity: 1,
+            states: { "on_hand" => 1 }
+          )
+        end
+      end
+
+      context 'multiple units out of order' do
+        let!(:variant2){ create :variant }
+        let!(:variant3){ create :variant }
+        let(:inventory_units) { [build_unit(variant3), build_unit(variant), build_unit(variant2)] }
+
+        it "has correct items in order by variant" do
+          expect(manifest.items.count).to eq 3
+          expect(manifest.items[0]).to have_attributes(
+            variant: variant,
+            quantity: 1,
+            states: { "on_hand" => 1 }
+          )
+          expect(manifest.items[1]).to have_attributes(
+            variant: variant2,
+            quantity: 1,
+            states: { "on_hand" => 1 }
+          )
+          expect(manifest.items[2]).to have_attributes(
+            variant: variant3,
             quantity: 1,
             states: { "on_hand" => 1 }
           )

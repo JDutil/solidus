@@ -25,7 +25,14 @@ class Spree::ShippingManifest
         variant = units.first.variant
         ManifestItem.new(line_item, variant, units.length, states)
       end
-    end.flatten
+    end.
+    flatten.
+    sort! do |item_x, item_y|
+      # Sort by Variant ID to ensure manifest items are always returned in a
+      # dependable order to help reduce the chance of a deadlock during a
+      # manifest restock.
+      item_x.variant.id <=> item_y.variant.id
+    end
   end
 end
 
