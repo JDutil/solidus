@@ -41,7 +41,7 @@ group :backend, :core, :api do
 end
 
 group :backend do
-  gem 'teaspoon', require: false
+  gem 'teaspoon', '1.1.5', require: false
   gem 'teaspoon-mocha', require: false
   gem 'capybara', '~> 3.13', require: false
   gem 'capybara-screenshot', '>= 1.0.18', require: false
